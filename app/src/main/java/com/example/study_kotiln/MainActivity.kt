@@ -52,12 +52,14 @@ class MainActivity : AppCompatActivity() {
             textView1.text = out(sum(1,2))
 
 
+            //7
+            val plus : (Int,Int) -> Int = {x,y -> x + y}
+            val minus : (Int,Int) -> Int = {x,y -> x - y}
 
-            //var test_fun = operation({addition(10,20)})
+            textView1.text = operation(plus,11,22).toString()
+            textView1.text = operation(minus,100,1).toString()
 
-            //이게 아닌데...
-            //textView1.text = operation({addition(10,20)}).toString()
-
+            // 클래스, 데이터 클래스, 네스티드 클래스 공부
 
         }
     }
@@ -69,17 +71,8 @@ class MainActivity : AppCompatActivity() {
     fun sum(n1 : Int, n2: Int)  = n1 + n2
 
 
-    fun operation( cal: () -> Int){
-        cal()
-    }
-
-    fun addition(n1 : Int, n2 : Int) : Int{
-        return n1 + n2;
-    }
-
-    fun subtraction(n1 : Int, n2 : Int) : Int{
-        return n1 - n2;
-    }
+    //7
+    fun operation( cal: (Int, Int) -> Int, x:Int, y:Int) : Int = cal(x,y)
 
 
 
