@@ -1,5 +1,7 @@
 package com.example.study_kotiln
 
+import android.content.Intent
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -61,6 +63,39 @@ class MainActivity : AppCompatActivity() {
 
             // 클래스, 데이터 클래스, 네스티드 클래스 공부
 
+
+
+
+            var temp = StockInfo("A00","메인창고","KMASDFA-A01","쿠션","01",20000,10)
+            var temp_list = mutableListOf<StockInfo>()
+            temp_list.add(temp)
+
+
+
+            //
+
+            var intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("StringData","This is String Data")
+            startActivity(intent)
+
+
+
+
+
+            var asyncTest = object : AsyncTask<Void,Void,String>(){
+                // 백그라운드에서 값이 연산되는 부분
+                override fun doInBackground(vararg params: Void?): String {
+                    return "test"
+                }
+                // 중간 값이 출력되는 부분
+                override fun onProgressUpdate(vararg values: Void?) {
+                    super.onProgressUpdate(*values)
+                }
+                // 최종 값이 출력되는 부분
+                override fun onPreExecute() {
+                    super.onPreExecute()
+                }
+            }
         }
     }
 

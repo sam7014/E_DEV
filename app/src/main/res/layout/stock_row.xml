@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView_warehouseName"
+            android:layout_width="180px"
+            android:layout_height="wrap_content"
+            android:text="창고명"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView_productCode"
+            android:layout_width="180px"
+            android:layout_height="wrap_content"
+            android:text="상품코드"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView_productName"
+            android:layout_width="330px"
+            android:layout_height="wrap_content"
+            android:text="상품명"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView_manageCode"
+            android:layout_width="110px"
+            android:layout_height="wrap_content"
+            android:text="구분"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView_proudctPrice"
+            android:layout_width="130px"
+            android:layout_height="wrap_content"
+            android:text="판매가"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView_stockCount"
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:text="재고수량"/>
+    </LinearLayout>
+
+
+</LinearLayout>
