@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             //
 
             var intent = Intent(this, ResultActivity::class.java)
-            intent.putExtra("StringData","This is String Data")
+            intent.putExtra("keyword","쉐이딩")
             startActivity(intent)
 
 
