@@ -25,13 +25,14 @@ class ResultActivity : AppCompatActivity() {
         //var intent = intent // 그냥 바로 인텐트 사용하면 되는 듯
         val keyword = intent.getStringExtra("keyword")
 
-        var async = object : AsyncTask<Void,Void,Void>(){
+        var async = object : AsyncTask<Void,Void,String>(){
             override fun onPreExecute() {
                 super.onPreExecute()
-                url = URL("https://testURL/api/intranet/GetQTY?keyword=" + keyword)
+                url = URL("https://asdf.asdef.co.kr/api/intranet/GetQTY?keyword=" + keyword)
             }
 
-            override fun doInBackground(vararg params: Void?): Void {
+            override fun doInBackground(vararg params: Void?): String {
+
                 var conn = url.openConnection() as HttpURLConnection
                 conn.requestMethod = "GET"
                 conn.doInput = true
@@ -43,21 +44,37 @@ class ResultActivity : AppCompatActivity() {
                 val resCode = conn.responseCode
                 val resMessage = conn.responseMessage
 
+                /*
                 val inputStream = conn.inputStream as InputStream
                 val isReader : InputStreamReader
 
 
                 val builder : StringBuilder
                 //val reader : BufferedReader()
+                 */
 
+                var inputStream = conn.getInputStream()
+                var builder = StringBuilder()
+                var reader = BufferedReader(InputStreamReader(inputStream, "UTF-8"))
 
+                var line = reader.readLine()
+
+                while ( line != null ){
+                    builder.append(line + "\n")
+                }
+
+                result = builder.toString()
+
+                println(result)
+
+                return "OK"
             }
 
             override fun onProgressUpdate(vararg values: Void?) {
                 super.onProgressUpdate(*values)
             }
 
-            override fun onPostExecute(result: Void?) {
+            override fun onPostExecute(result: String?) {
                 super.onPostExecute(result)
             }
         }
